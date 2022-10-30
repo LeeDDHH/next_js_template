@@ -2,43 +2,11 @@
 # Refer for explanation to following link:
 # https://github.com/evilmartians/lefthook/blob/master/docs/full_guide.md
 #
-# pre-push:
-#   commands:
-#     packages-audit:
-#       tags: frontend security
-#       run: yarn audit
-#     gems-audit:
-#       tags: backend security
-#       run: bundle audit
-#
 pre-commit:
-  #   parallel: true
   commands:
     format:
-      # files: git diff --name-only HEAD
       glob: '*.{js,jsx,ts,tsx}'
       run: npm run format
     lint:
-      # files: git diff --name-only HEAD
       glob: '*.{js,jsx,ts,tsx}'
       run: npm run lint && git add {staged_files}
-      # files: git diff --name-only HEAD
-      # run: git add .
-#     eslint:
-#       glob: "*.{js,ts}"
-#       run: yarn eslint {staged_files}
-#     rubocop:
-#       tags: backend style
-#       glob: "*.rb"
-#       exclude: "application.rb|routes.rb"
-#       run: bundle exec rubocop --force-exclusion {all_files}
-#     govet:
-#       tags: backend style
-#       files: git ls-files -m
-#       glob: "*.go"
-#       run: go vet {files}
-#   scripts:
-#     "hello.js":
-#       runner: node
-#     "any.go":
-#       runner: go run
