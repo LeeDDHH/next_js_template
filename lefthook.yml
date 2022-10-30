@@ -15,11 +15,16 @@ pre-commit:
   #   parallel: true
   commands:
     format:
+      # files: git diff --name-only HEAD
       glob: '*.{js,jsx,ts,tsx}'
       run: npm run format
     lint:
+      # files: git diff --name-only HEAD
       glob: '*.{js,jsx,ts,tsx}'
-      run: npm run lint
+      run: npm run lint && git add {staged_files}
+    git-add:
+      # files: git diff --name-only HEAD
+      # run: git add .
 #     eslint:
 #       glob: "*.{js,ts}"
 #       run: yarn eslint {staged_files}
