@@ -14,9 +14,12 @@
 pre-commit:
   #   parallel: true
   commands:
-    lint-format:
+    format:
       glob: '*.{js,jsx,ts,tsx}'
-      run: npm run lint:fix {staged_files}
+      run: npm run format
+    lint:
+      glob: '*.{js,jsx,ts,tsx}'
+      run: npm run lint
 #     eslint:
 #       glob: "*.{js,ts}"
 #       run: yarn eslint {staged_files}
