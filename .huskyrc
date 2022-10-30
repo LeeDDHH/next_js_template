@@ -1,0 +1,4 @@
+# for node installed by brew
+PATH="/usr/local/bin:$PATH"
+# for node installed by nodenv
+PATH="$HOME/.nodenv/bin:$PATH"
